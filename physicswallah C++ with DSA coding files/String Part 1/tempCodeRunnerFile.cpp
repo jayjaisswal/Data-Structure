@@ -1,0 +1,1 @@
+cout << (int)str[5];

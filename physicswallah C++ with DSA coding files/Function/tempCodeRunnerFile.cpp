@@ -1,0 +1,1 @@
+int factn = fact(n);
