@@ -11,7 +11,7 @@ void display(vector<int>& a){
 void sorting(vector<int>& b){
     int noz = 0;
     int noo = 0;
-    int n = b.size();     
+    int n = b.size();       
     for(int i = 0;i<=n-1;i++){
         if(b[i]==0) noz++;
         else noo++;
