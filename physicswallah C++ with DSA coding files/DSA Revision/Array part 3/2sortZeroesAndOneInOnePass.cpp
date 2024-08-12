@@ -9,18 +9,30 @@ void display(vector<int>& a){
 }
 
 void sorting(vector<int>& b){
-    int noz = 0;
-    int noo = 0;
-    int n = b.size();       
-    for(int i = 0;i<=n-1;i++){
-        if(b[i]==0) noz++;
-        else noo++;
+    int n = b.size();
+    int i = 0;
+    int j = n-1;
+    while(i<=j){
+        if(b[i]==0) i++;
+        if(b[j]==1) j--;
+        if(i>j) break;
+        if(b[i]==1 && b[j]==0){
+            b[i] = 0; // basically we swap 
+            b[j] = 1;
+        }
+
     }
-     for(int i = 0;i<=n-1;i++){   
-        if(i<noz) b[i]= 0;
-        else b[i] = 1;
-        
-    }
+    
+    // Also Correct
+    // while(i<=j){
+    //     if(b[i]==0) i++;
+    //     else if(b[j]==1) j--;
+    //     else if(b[i]==1 && b[j]==0){
+    //         b[i] = 0; // basically we swap 
+    //         b[j] = 1;
+    //     }
+
+    // }
 
 
 }
