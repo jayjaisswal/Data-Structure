@@ -3,29 +3,30 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {1, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8};
+    int arr[] = {0,0,0,0,0,1,1,1,1,1,1,1,1,1,1};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int x = 6;
+    int x = 0;
 
     bool flag = false;
     int low = 0;
     int high = size - 1;
+    int idx = -1;
 
     while (high >= low)
     {
         int mid = low + (high - low) / 2;
         if (arr[mid] == x)
         {
-
-            if (mid == size - 1 || arr[mid] != arr[mid + 1])
+            
+            if (arr[mid] != arr[mid + 1])
             {
                 flag = true;
-                cout << mid;
+                cout<<size - mid -1;
                 break;
             }
             else
             {
-                low = mid + 1;
+                 low = mid + 1;
             }
         }
         else if (arr[mid] > x)
@@ -37,11 +38,13 @@ int main()
             low = mid + 1;
         }
     }
+    
 
-    if (!flag)
+    if (flag == false)
     {
-        cout << "Element is not found";
+        cout << "0";
     }
 
     return 0;
 }
+
