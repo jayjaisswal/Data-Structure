@@ -63,10 +63,10 @@ vector<int> merge(vector<int>& arr1, vector<int>& arr2)
 int main()
 {
     vector<int> arr1;
-    arr1.push_back(1);
+    arr1.push_back(2);
+    arr1.push_back(3);
     arr1.push_back(4);
     arr1.push_back(5);
-    arr1.push_back(8);
     display(arr1);
 
 
@@ -83,8 +83,15 @@ int main()
     // int arr1[4] = {1, 4, 5, 8};
     // int arr2[6] = {2, 3, 6, 7, 10, 12};
 
-    vector<int> v = merge(arr1, arr2);
-    display(v);
+    // vector<int> v = merge(arr1, arr2);
+    // display(v);
+    // merge(arr1, arr2);
+    for (int i = 0; i <=merge(arr1, arr2). size() - 1; i++)
+    {
+        cout << merge(arr1, arr2)[i] << " ";
+    }
+    
+    
 
     
 }

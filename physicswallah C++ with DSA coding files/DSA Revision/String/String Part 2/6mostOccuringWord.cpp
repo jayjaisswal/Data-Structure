@@ -6,7 +6,7 @@
 using namespace std;
 int main()
 {
-    string str = "raghav is a  a  maths   teacher. raghav is a dsa mentor as well";
+    string str = "raghav is an  an  maths   teacher. raghav is  dsa mentor as well";
     stringstream ss(str);
     string temp;
     vector<string> s;
@@ -17,10 +17,10 @@ int main()
     sort(s.begin(), s.end());
     int max = 1;
     int count = 1;
-    for (int i = 1; i < s.size(); i++)
+    for (int i = 0; i < s.size()-1; i++)
     {
 
-        if (s[i] == s[i - 1])
+        if (s[i] == s[i + 1])
             count++;
         else
             count = 1;
@@ -29,10 +29,10 @@ int main()
     }
 
     count = 1;
-    for (int i = 1; i < s.size(); i++)
+    for (int i = 0; i < s.size()-1; i++)
     {
 
-        if (s[i] == s[i - 1])
+        if (s[i] == s[i + 1])
             count++;
         else
             count = 1;
