@@ -11,15 +11,37 @@ public:
         this->next = NULL;
     }
 };
+// size of LL
+void size(Node *head)
+{
+    int size = 0;
+    while (head != NULL)
+    {
+       
+        head = head->next;
+         size++;
 
-void display(Node *head)
+    }
+    cout<<size;
+}
+// Display function
+void display(Node *head) //agr pass bt reference h to "a" ko change hona chahiye but nhi  ye pass by reference nhi h address h
 {
     while (head != NULL)
     {
         cout << head->val << " ";
         head = head->next;
+        
     }
 }
+
+// recursive display function
+void recursiveDisp(Node* head){
+    if(head==NULL) return;
+    cout<<head->val<<" ";
+    recursiveDisp(head->next);
+    
+    }
 int main()
 {
     Node *a = new Node(10); // a , b ,c d are are address of Node a, b, c, d
@@ -45,5 +67,11 @@ int main()
 
     // function call to print LL
     cout << endl;
+    
     display(a);
+    cout << endl;
+    size(a);
+    cout << endl;
+    recursiveDisp(a);
+    
 }
