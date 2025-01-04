@@ -15,12 +15,20 @@ public:
 // recursive display function
 void recursiveDisp(Node* head){
     if(head==NULL) return;
-    
-    recursiveDisp(head->next);
     cout<<head->val<<" ";
+    recursiveDisp(head->next);
     
     }
+void insertAtEnd(Node* head,int value){
+    Node* temp = new Node(value);
+    Node* t = head;
+    while(t->next!=NULL){ // ishka mtlb last node me jaana hai very important
+        t = t->next;
+    }
+    t->next = temp;
 
+
+}
 int main()
 {
     Node *a = new Node(10); // a , b ,c d are are address of Node a, b, c, d
@@ -34,6 +42,8 @@ int main()
 
    
     recursiveDisp(a);
-    
+    insertAtEnd(a,8);
+    cout<<endl;
+    recursiveDisp(a);
     
 }
