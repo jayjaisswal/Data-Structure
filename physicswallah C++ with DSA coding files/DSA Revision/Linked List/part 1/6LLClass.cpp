@@ -29,7 +29,7 @@ public:
     void display()
     {
         if (size == 0)
-            cout << 0;
+            cout << "Empty LL";
 
         else
         {
@@ -75,6 +75,7 @@ public:
         size++;
     }
 
+    // insert at any index
     void insertAtIndex(int idx, int value)
     {
 
@@ -82,7 +83,7 @@ public:
         {
             insertAtHead(value);
         }
-        else if (idx < 0 || idx > size)//not size-1 as we are inserting in last too via insertAtTail
+        else if (idx < 0 || idx > size) // not size-1 as we are inserting in last too via insertAtTail
         {
             cout << "invalid index";
             cout << endl;
@@ -106,19 +107,91 @@ public:
         }
     }
 
+    // get elemenyt at any index
     void getElementAtIdx(int idx)
     {
-        if (idx < 0 || idx >= size) {
-            cout<<"Invalid Index";
+        if (idx < 0 || idx >= size)
+        {
+            cout << "Invalid Index" << endl;
             return;
         }
 
-        Node* temp = head;
-        for(int i = 0;i<idx;i++){
+        Node *temp = head;
+        for (int i = 0; i < idx; i++)
+        {
             temp = temp->next;
         }
-        cout<<temp->val;
+        cout << temp->val << endl;
+    }
 
+    // delete at head
+    void deleteAtHead()
+    {
+        if (size == 0)
+        {
+            cout << "Linkedlist is empty!!" << endl;
+        }
+        else
+        { // also works if size is 1 or we can implement "head=tail=null & size--"
+            head = head->next;
+            size--;
+        }
+    }
+
+    // delete at tail
+    void deleteAtTail()
+    {
+        if (size == 0)
+        {
+            cout << "Linkedlist is empty!!" << endl;
+            return;
+        }
+
+        Node *temp = head;
+        if (size == 1)
+        {
+            head = tail = NULL;
+            size--;
+        }
+        else
+        {
+            while (temp->next != tail)
+            {
+                temp = temp->next;
+            }
+            temp->next = NULL;
+            tail = temp;
+            size--;
+        }
+    }
+
+    // delete at index
+    void deleteAtIndex(int idx)
+    {
+        if (idx < 0 || idx >= size) // Check for invalid indices
+        {
+            cout << "Invalid Index" << endl;
+            return;
+        }
+        if (idx == 0)
+        {
+            deleteAtHead();
+        }
+        
+        else if (idx == size - 1)
+        {
+            deleteAtTail();
+        }
+        else
+        {
+            Node *temp = head;
+            for (int i = 0; i < idx - 1; i++)
+            {
+                temp = temp->next;
+            }
+            temp->next = temp->next->next;
+            size--;
+        }
     }
 };
 int main()
@@ -130,9 +203,15 @@ int main()
     ll.insertAtTail(10);
     // ll.display();
     ll.insertAtHead(8);
-    ll.display();
+    // ll.display();
     // cout << ll.size;
     ll.insertAtIndex(4, 66);
+    // ll.display();
+    // ll.getElementAtIdx(4);
+
+    // ll.deleteAtHead();
     ll.display();
-    ll.getElementAtIdx(0);
+    // ll.deleteAtTail();
+    ll.deleteAtIndex(3);
+    ll.display();
 }
