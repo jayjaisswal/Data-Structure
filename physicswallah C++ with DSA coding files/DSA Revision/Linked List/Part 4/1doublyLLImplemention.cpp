@@ -13,21 +13,50 @@ public:
         this->prev = NULL;
     }
 };
-
-void display(Node* head){
-    while(head!=NULL){
-        cout<<head->val<<" ";
+// normal display function
+void display(Node *head) // space complexity O(1)
+{
+    while (head != NULL)
+    {
+        cout << head->val << " ";
         head = head->next;
     }
-    cout<<endl;
+    cout << endl;
+}
+
+// normal display reverse
+void displayReverse(Node *tail) // space complexity O(1)
+{
+    while(tail){
+        cout << tail->val << " ";
+        tail = tail->prev;
+    }
+}
+
+// recursive display function
+void displayRecursive(Node *head) // space complexity O(n)
+{
+    if (head == NULL)
+        return;
+    cout << head->val << " ";
+    displayRecursive(head->next);
+}
+
+// reverse display using recursive
+void displayReverseRecursive(Node *head) // space complexity O(n)
+{
+    if (head == NULL)
+        return;
+    displayReverseRecursive(head->next);
+    cout << head->val << " ";
 }
 int main()
 {
-    Node* a = new Node(10);
-    Node* b = new Node(20);
-    Node* c = new Node(30);
-    Node* d = new Node(40);
-    Node* e = new Node(50);
+    Node *a = new Node(10);
+    Node *b = new Node(20);
+    Node *c = new Node(30);
+    Node *d = new Node(40);
+    Node *e = new Node(50);
 
     a->next = b;
     b->next = c;
@@ -40,4 +69,9 @@ int main()
     b->prev = a;
 
     display(a);
+    displayRecursive(a);
+    cout << endl;
+    displayReverseRecursive(a);
+    cout<<endl;
+    displayReverse(e);
 }
