@@ -182,16 +182,39 @@ public:
     }
 
     // getAtIndex
+    // int getAtIndex(int index)
+    // {
+    //     if (index < 0 || index >= size)
+    //     {
+    //         cout << "Invalid Index";
+    //         return -1;
+    //     }
+    //     else if (size == 0)
+    //     {
+    //         cout << "List is empty";
+    //         return -1;
+    //     }
+    //     else if (index == 0)
+    //         return head->val;
+    //     else if (index == size - 1)
+    //         return tail->val;
+    //     else
+    //     {
+    //         Node *temp = head;
+    //         for (int i = 0; i <= index - 1; i++)
+    //         {
+    //             temp = temp->next;
+    //         }
+    //         return temp->val;
+    //     }
+    // }
+
+    // optimized version of getAtIndex
     int getAtIndex(int index)
     {
         if (index < 0 || index >= size)
         {
             cout << "Invalid Index";
-            return -1;
-        }
-        else if (size == 0)
-        {
-            cout << "List is empty";
             return -1;
         }
         else if (index == 0)
@@ -200,12 +223,24 @@ public:
             return tail->val;
         else
         {
-            Node *temp = head;
-            for (int i = 0; i <= index - 1; i++)
+            if (index < size / 2)
             {
-                temp = temp->next;
+                Node *temp = head;
+                for (int i = 0; i <= index - 1; i++)
+                {
+                    temp = temp->next;
+                }
+                return temp->val;
             }
-            return temp->val;
+            else
+            {
+                Node *temp = tail;
+                for (int i = size - 1; i > index; i--)
+                {
+                    temp = temp->prev;
+                }
+                return temp->val;
+            }
         }
     }
 
@@ -245,9 +280,13 @@ int main()
     list.display();
     list.insertAtHead(33);
     list.display();
-    list.deleteAtTail();
+    // list.deleteAtTail();
+    // list.display();
+    // list.deleteAtIndex(2);
     list.display();
-    list.deleteAtIndex(2);
-    list.display();
+    cout << list.getAtIndex(3);
     cout<<list.getAtIndex(2);
+    
 }
+
+// TODO: Code optimized function for all like getATIndex
