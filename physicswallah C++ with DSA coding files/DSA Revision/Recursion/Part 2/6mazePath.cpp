@@ -33,11 +33,24 @@ void printPath(int sr, int sc, int er, int ec, string s){
 }
 
 // printPath2---> use 2 parameter and string 
+void printPath2(int row, int col, string s){
+    // maze(1,1,3,3)
+    // base case
+    if(row<1 || col<1) return ;
+    if(row==1 && col==1) {
+        cout<<s<<endl;
+        return ;
+    }
+     printPath2( row, col-1, s +'R');
+     printPath2( row-1, col, s +'L');
+    
+}
 
 int main()
 {
     
-    cout << maze(1,1,3,3)<<endl;
+    cout << maze(1,1,2,3)<<endl;
     cout << maze2(3,3)<<endl;
-    printPath(1,1,4,4,"");
+    // printPath(1,1,3,3,"");
+    printPath2(3,3,"");
 }
