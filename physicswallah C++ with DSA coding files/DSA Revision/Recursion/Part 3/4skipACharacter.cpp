@@ -6,33 +6,12 @@
 //     string str = "jay kumar";
 //     string s = "";
 //     for(int i =0;i<=str.length()-1;i++){
-//         if(str[i] != 'a') s += str[i];
+//         if(str[i] != 'a') s += str[i];  or s.push_back(str[i]);
 //     }
 //     cout<<s<<endl;
 // }
 
-// recursively
 
-// #include <iostream>
-// #include <string>
-// using namespace std;
-// void skipACharacter(string s, int idx, string res)
-// {
-//     if (s.length() == idx)
-//     {
-//         cout << res << endl;
-//         return;
-//     }
-//     if (s[idx] != 'a')
-//         res += s[idx];
-
-//     skipACharacter(s, idx + 1, res);
-// }
-// int main()
-// {
-//     string s = "jay kumar";
-//     skipACharacter(s, 0, "");
-// }
 
 
 
@@ -57,3 +36,28 @@ int main()
     string s = "jay kumar";
     skipACharacter( "", "physics wallah");
 }
+
+// recursively
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// void skipACharacter(string s, int idx, string res)
+// {
+//     if (s.length() == idx)
+//     {
+//         cout << res << endl;
+//         return;
+//     }
+//     if (s[idx] != 'a')
+//         res += s[idx];
+
+//     skipACharacter(s, idx + 1, res);
+// }
+// int main()
+// {
+//     string s = "jay kumar";
+//     skipACharacter(s, 0, "");
+// }
+
+// c.w. solve skip 1 in arrray of [1,2,3,1,1,3,4,4]
