@@ -8,7 +8,7 @@ int factorial(int n)
         return 1;
     else
     {
-       cout <<n<<endl;
+        
         return (n * factorial(n - 1));
     }
 }

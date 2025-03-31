@@ -21,6 +21,6 @@ int pwr(int a, int b)
 int main()
 {
 
-    cout << pow(3, 3) << endl;
-    cout << pwr(3, 2) << endl;
+    cout << pow(3, 0) << endl;
+    cout << pwr(3, 0) << endl;
 }

@@ -10,6 +10,5 @@ void printOneTwoN(int i, int n)
 
 int main()
 {
-
     printOneTwoN(1, 6);
 }

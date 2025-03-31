@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
-int printOneTwoN(int n)
+int printNTwo1(int n)
 {
-    
+
     if (n == 1) //  base case
         return 1;
     cout << n << endl;
-    printOneTwoN(n - 1);
+    printNTwo1(n - 1);
 }
 
 int main()
 {
 
-    cout << printOneTwoN(5) << endl;
+    cout << printNTwo1(5) << endl;
+    
 }

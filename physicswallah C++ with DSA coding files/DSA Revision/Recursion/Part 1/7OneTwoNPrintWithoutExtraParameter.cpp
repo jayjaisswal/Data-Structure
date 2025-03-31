@@ -1,5 +1,4 @@
-// Write a program to calculate the sum of odd numbers between a
-// and b (both inclusive) using recursion.
+
 
 #include <iostream>
 using namespace std;

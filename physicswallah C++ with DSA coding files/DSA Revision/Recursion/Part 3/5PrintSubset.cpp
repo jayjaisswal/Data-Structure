@@ -10,9 +10,9 @@ void printSubstring(string ans, string original,  vector<string>& v)
         return;
     }
     
-    
-    printSubstring(ans + original[0], original.substr(1), v); //ab
     printSubstring(ans, original.substr(1), v);
+    printSubstring(ans + original[0], original.substr(1), v); //ab
+   
 
    
     
@@ -21,8 +21,10 @@ void printSubstring(string ans, string original,  vector<string>& v)
 int main()
 {
     vector<string> v;
-    printSubstring("", "abc", v);
+    string s = "abc";
+    printSubstring("", s, v);
     for(int i =0;i<v.size();i++){
+        cout << "subset is: ";
         cout<<v[i]<<endl;
     }
 }
