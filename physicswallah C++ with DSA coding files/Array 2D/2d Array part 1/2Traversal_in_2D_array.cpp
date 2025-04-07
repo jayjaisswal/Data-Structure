@@ -12,7 +12,7 @@ int main()
     //     }
     // }
 
-    int m; // rows
+      int m; // rows
     cout << "Enter the no. of rows :";
     cin >> m;
     int n; // column

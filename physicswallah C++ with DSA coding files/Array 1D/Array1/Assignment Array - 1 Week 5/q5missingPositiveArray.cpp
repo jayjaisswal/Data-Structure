@@ -17,8 +17,9 @@ int main()
     int x = 1;
     bool flag = false;
     for (int i = 0; i <= size - 1; i++)
-    {   
-        if(arr[i]<0) continue;
+    {
+        if (arr[i] < 0)
+            continue;
 
         if (arr[i] != x)
         {
@@ -26,9 +27,11 @@ int main()
             flag = true;
             break;
         }
-        else x++;
+        else
+            x++;
     }
-    if (flag == false) cout<<"no missing"<<endl;
+    if (flag == false)
+        cout << "no missing" << endl;
 
     return 0;
 }

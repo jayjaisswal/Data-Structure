@@ -2,21 +2,18 @@
 using namespace std;
 int partition(int arr[], int startIdx, int endIndx)
 {
-    // take first element as pivot
-    int pivotElement = arr[startIdx];
+    int pivotElement = arr[(startIdx + endIndx)/2];
     int count = 0;
 
      // Count elements <= pivot
-    for (int i = startIdx + 1; i <= endIndx; i++)
+    for (int i = startIdx; i <= endIndx; i++)
     {
+        if(i==(startIdx + endIndx)/2) continue;
         if (arr[i] <= pivotElement)
             count++;
     }
     int pivotIdx = startIdx + count; // Correct pivot index
-    swap(arr[startIdx], arr[pivotIdx]);
-
-    // arrange element smaller than pivot element to the left of it 
-    // arrange element greater than pivot element to the right of it 
+    swap(arr[(startIdx + endIndx)/2], arr[pivotIdx]);
     int i = startIdx;
     int j = endIndx;
     while (i < pivotIdx && j > pivotIdx)
@@ -36,15 +33,15 @@ int partition(int arr[], int startIdx, int endIndx)
     return pivotIdx;
 }
 
-void quickSort(int arr[], int startIdx, int endIndx)
+int KthSmallest(int arr[], int startIdx, int endIndx, int k)
 {
-    if (startIdx >= endIndx)
-        return;
+    
 
     int partitionIdx = partition(arr, startIdx, endIndx);
-
-    quickSort(arr, startIdx, partitionIdx - 1);
-    quickSort(arr, partitionIdx + 1, endIndx);
+    if(partitionIdx+1==k) return arr[partitionIdx];
+    else if(partitionIdx+1<k) return KthSmallest(arr, partitionIdx+1, endIndx, k);
+    else return KthSmallest(arr, startIdx, partitionIdx-1, k);
+    
 }
 int main()
 {
@@ -55,9 +52,7 @@ int main()
         cout << arr[i] << " ";
     }
     cout << endl;
-    quickSort(arr, 0, size - 1);
-    for (int i = 0; i <= size - 1; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    int k = 6; //3rd smallest element i want
+    cout<<KthSmallest(arr, 0, size - 1, k);
+   
 }
