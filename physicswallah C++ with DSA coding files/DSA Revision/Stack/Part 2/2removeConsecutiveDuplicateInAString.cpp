@@ -9,9 +9,7 @@ void removeConse(string s){
       string ans = "";
       for(int i=0;i<s.length();i++){
             st.push(s[i]); // all pushed into the stack
-            if(i<s.length() && st.top()==s[i+1]){
-                continue;
-            }else{
+            if(i<s.length() && st.top()!=s[i+1]){
                 ans+=st.top();
             }
       }
@@ -22,6 +20,6 @@ void removeConse(string s){
 
 int main() {
     
-    string s = "aaabbcddaabffg";
+    string s = "aaaabbcddaabffg";
     removeConse(s);
 }

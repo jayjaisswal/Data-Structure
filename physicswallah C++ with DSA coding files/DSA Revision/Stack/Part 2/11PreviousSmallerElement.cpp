@@ -22,7 +22,7 @@ int main() {
     ans[0] = -1;
     st.push(arr[0]);
     for(int i =1;i<n;i++){
-        while(st.size()>0 && st.top()<=arr[i]){
+        while(st.size()>0 && st.top()>=arr[i]){
             st.pop();
         }
 

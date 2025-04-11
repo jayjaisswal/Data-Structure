@@ -55,7 +55,7 @@ int main()
 
     for (int i = n - 2; i >= 0; i--)
     {
-        // pop all the elements smaller that v[i]
+        // pop all the elements smaller that arr[i]
         while (s.size() > 0 && s.top() <= arr[i])
         {
             s.pop();

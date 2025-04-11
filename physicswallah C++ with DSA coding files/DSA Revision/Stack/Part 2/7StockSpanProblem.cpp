@@ -17,8 +17,8 @@ int main() {
     cout << endl;
 
     stack <int> st;
-    int ansidx[n];
-    ansidx[0] = -1;
+    int pgi[n];
+    pgi[0] = -1;
     st.push(0);
     for(int i =1;i<n;i++){
         while(st.size()>0 && arr[st.top()]<=arr[i]){
@@ -26,24 +26,24 @@ int main() {
         }
 
         if(st.size()==0)
-        ansidx[i]=1;
+        pgi[i]=1;
         else
-        ansidx[i] = st.top();
+        pgi[i] = st.top();
 
          st.push(i);
 
 
     }
 
-    // print ansIdx
+    // print previous Next idx
     for (int i = 0; i < n; i++)
     {
-        cout << ansidx[i] << " ";
+        cout <<pgi[i] << " ";
     }
 
     int span[n];
     for(int i=0;i<n;i++){
-        span[i] = i-ansidx[i];
+        span[i] = i-pgi[i];
     }
 
     cout<<endl;

@@ -16,7 +16,7 @@ using namespace std;
 //         for (int j = i + 1; j < v.size(); j++)
 
 //         {
-            
+
 //             if (v[i] < v[j])
 //             {
 //                 ans.push_back(v[j]);
@@ -36,25 +36,29 @@ using namespace std;
 //     }
 // }
 
-
 // using stack ..........................................................
 // pop, ans, push
-void nextGreaterStack(vector<int> &v){
+void nextGreaterStack(vector<int> &v)
+{
     int n = v.size();
     stack<int> s;
     vector<int> ans(n);
-    ans[n-1] = -1;
-    s.push(v[n-1]);
+    ans[n - 1] = -1;
+    s.push(v[n - 1]);
 
-    for(int i = n-2;i>=0;i--){
+    for (int i = n - 2; i >= 0; i--)
+    {
         // pop all the elements smaller that v[i]
-        while(s.size()>0 && s.top()<=v[i]) {
+        while (s.size() > 0 && s.top() <= v[i])
+        {
             s.pop();
         }
 
-        // mark thr ans 
-        if(s.size() ==0) ans[i] = -1;
-        else ans[i] = s.top();
+        // mark thr ans
+        if (s.size() == 0)
+            ans[i] = -1;
+        else
+            ans[i] = s.top();
 
         // push
         s.push(v[i]);
@@ -65,14 +69,11 @@ void nextGreaterStack(vector<int> &v){
     {
         cout << ans[i] << " ";
     }
-
 }
-
 
 int main()
 {
 
-  
     vector<int> v;
     int arr[] = {3, 1, 2, 5, 4, 6, 2, 3};
     for (int i = 0; i < 8; i++)
@@ -87,7 +88,6 @@ int main()
     cout << endl;
 
     // nextGreater(v);
-
 
     nextGreaterStack(v);
 }

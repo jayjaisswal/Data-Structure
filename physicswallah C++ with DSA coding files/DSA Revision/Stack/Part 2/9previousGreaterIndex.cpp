@@ -20,9 +20,9 @@ int main() {
     stack <int> st;
     int ans[n];
     ans[0] = -1;
-    st.push(arr[0]);
+    st.push(0);
     for(int i =1;i<n;i++){
-        while(st.size()>0 && st.top()<=arr[i]){
+        while(st.size()>0 && arr[st.top()]<=arr[i]){
             st.pop();
         }
 
@@ -31,7 +31,7 @@ int main() {
         else
         ans[i] = st.top();
 
-         st.push(arr[i]);
+         st.push(i);
 
 
     }

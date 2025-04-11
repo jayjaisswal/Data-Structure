@@ -11,8 +11,8 @@ void removeConse(string s){
       string ans = ""; // no need of extra variable after loop we can do s = ""
       st.push(s[0]);
       for(int i=1;i<s.length();i++){  
-           if(s[i]==st.top()) continue; // use != no need to use continue
-           else st.push(s[i]);
+           if(s[i]!=st.top())  st.push(s[i]);// use != no need to use continue
+            
       }
 
       while(st.size()!=0){
