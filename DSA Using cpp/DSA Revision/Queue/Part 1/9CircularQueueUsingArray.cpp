@@ -8,12 +8,14 @@ class Queue
 public:
     int f; // front
     int b; // back
+    int size;
     // int arr[5];
     vector<int> arr;
     Queue(int val)
     {
         f = 0;
         b = 0;
+        size =0;
         vector<int> v(val);
         arr = v;
 
@@ -27,21 +29,23 @@ public:
         }
         arr[b] = val;
         b++;
+        size++;
     }
 
     void pop()
     {
-        if (b == f)
+        if (size==0)
         { // or f-b==0 -> size = 0
             cout << "Queue is empty" << endl;
             return;
         }
         f++;
+        size--;
     }
 
     int front()
     {
-        if (b == f)
+       if (size==0)
         {
             cout << "Queue is empty" << endl;
             return -1;
@@ -50,21 +54,21 @@ public:
     }
     int back()
     {
-        if (b == f)
+        if  (size==0)
         {
             cout << "Queue is empty" << endl;
             return -1;
         }
         return arr[b - 1];
     }
-    int size()
+    int Size()
     {
-        return b - f;
+        return size;
     }
 
     bool empty()
     {
-        if (b == f)
+        if  (size==0)
             return true;
         else
             return false;
@@ -97,7 +101,7 @@ int main()
     cout<<"empty "<<endl;
     cout<<q.empty()<<endl;
     cout<<"size "<<endl;
-    cout<<q.size()<<endl;
+    cout<<q.Size()<<endl;
 
     cout<<"display "<<endl;
     q.display();
