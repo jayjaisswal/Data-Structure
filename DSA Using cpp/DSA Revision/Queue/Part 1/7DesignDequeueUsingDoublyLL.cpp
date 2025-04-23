@@ -118,33 +118,33 @@ int main() {
     Deque dq;
 
     dq.pushFront(1);
-//     dq.pushFront(2);
-//     dq.pushFront(3);
-//     dq.pushFront(4);
-//     dq.display();
-//     cout<<endl;
-//     dq.pushBack(5);
-//     dq.pushBack(6);
-//     dq.display();
-//     cout<<endl;
+    dq.pushFront(2);
+    dq.pushFront(3);
+    dq.pushFront(4);
+    dq.display();
+    cout<<endl;
+    dq.pushBack(5);
+    dq.pushBack(6);
+    dq.display();
+    cout<<endl;
     
-//     cout <<"Front"<< dq.front() << endl;
-//     cout <<"Back: "<< dq.back() << endl;
+    cout <<"Front"<< dq.front() << endl;
+    cout <<"Back: "<< dq.back() << endl;
     
-//     dq.popFront();
-//     dq.popFront();
-//     dq.display();
-//     cout<<endl;
-//     dq.popBack();
-//     dq.popBack();
-//     dq.display();
-//     cout<<endl;
-//     dq.pushFront(99);
-//     dq.pushBack(90);
-//     dq.display();
-//     cout<<endl;
-//     cout <<"Front"<< dq.front() << endl;
-//     cout <<"Back: "<< dq.back() << endl;
+    dq.popFront();
+    dq.popFront();
+    dq.display();
+    cout<<endl;
+    dq.popBack();
+    dq.popBack();
+    dq.display();
+    cout<<endl;
+    dq.pushFront(99);
+    dq.pushBack(90);
+    dq.display();
+    cout<<endl;
+    cout <<"Front"<< dq.front() << endl;
+    cout <<"Back: "<< dq.back() << endl;
 
 
     
