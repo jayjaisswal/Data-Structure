@@ -52,8 +52,6 @@ int main()
     return 0;
 }
 
-
-
 /////orrr
 // while (i < j)
 //     {
@@ -61,7 +59,7 @@ int main()
 //             i++;
 //       else  if (v[j] == 1)
 //             j--;
-//        
+//
 //       else  if (v[i] == 1 && v[j] == 0)
 //         {
 //             v[i] = 0;
@@ -77,7 +75,7 @@ int main()
 //             i++;
 //         if (v[j] == 1)
 //             j--;
-//        
+//
 //       else  if (v[i] == 1 && v[j] == 0)
 //         {
 //             v[i] = 0;
@@ -85,7 +83,6 @@ int main()
 //             i++;
 //             j--;
 //         }
-
 
 /////orrr
 // while (i < j)
@@ -102,7 +99,7 @@ int main()
 //             i++;
 //         if (v[j] == 1)
 //             j--;
-//        
+//
 //        if (v[i] == 1 && v[j] == 0)
 //         {
 //             v[i] = 0;

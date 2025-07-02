@@ -23,10 +23,8 @@ int main()
             flag = true;
     }
     if (flag == true)
+        {
         cout << "Element Present"<<endl;
-    else
-        cout << "Not present"<<endl;
-        
         int count = 0;
         for(int i = 0; i<size;i++)
         {
@@ -34,5 +32,10 @@ int main()
             count++;
         }
         cout<<count;
+        }
+    else
+        cout << "Not present"<<endl;
+        
+    
     return 0;
 }

@@ -25,6 +25,7 @@ int main()
         {
             cout << x << endl;
             flag = true;
+            
             break;
         }
         else

@@ -1,16 +1,33 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
-    int size,element;
+    int size;
+    cout << "Enter size of array" << endl;
+    cin >> size;
     int arr[size];
-    cout<<"Enter the size of the array";
-    cin>>size;
-    cout<<"Enter the elements of the array";
-    cin>>element;
+    cout << "Enter Elements" << endl;
+    for (int i = 0; i < size; i++)
+    {
+        cin >> arr[i];
+    }
+    int flag = 0;
+    cout << "Enter element you want to search : " << endl;
+    int x;
+    cin >> x;
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == x)
+        {
+            cout << "Element found at index :" << i << endl;
+            flag++;
+            break;
+        }
+    }
 
-
-
-
-return 0;
+    if (flag == 0)
+    {
+        cout << "Element not found";
+    }
+    return 0;
 }

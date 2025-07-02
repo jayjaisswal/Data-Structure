@@ -1,4 +1,4 @@
-// calculate thr product of all elements in the given array.
+// calculate the product of all elements in the given array.
 #include<iostream>
 using namespace std;
 int main()

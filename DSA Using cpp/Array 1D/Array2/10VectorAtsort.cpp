@@ -12,8 +12,8 @@ int main()
     v.push_back(1);
     v.push_back(6);
     v.push_back(8);
-    // v.at(2) = 90;
-    // cout<<v.at(2);
+    v.at(2) = 90;
+    cout<<v.at(2)<<endl;
     for (int i = 0; i < v.size(); i++)
     {
         cout << v.at(i) << " ";

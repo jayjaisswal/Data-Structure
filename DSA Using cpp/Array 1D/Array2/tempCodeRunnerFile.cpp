@@ -1,1 +1,1 @@
- vector<int> v;
+cout<<"Capicity is :"<<v.capacity()<<endl;

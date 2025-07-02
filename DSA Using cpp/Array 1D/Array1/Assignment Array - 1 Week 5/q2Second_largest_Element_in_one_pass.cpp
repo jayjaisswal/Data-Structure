@@ -24,15 +24,16 @@ int main()
             smx = mx;
             mx = arr[i];
         }
-        else if (smx < arr[i] && arr[i] != mx)
-        {
-            smx = arr[i];
-        }
+        else smx= max(smx, arr[i]);
+        // else if (smx < arr[i] && arr[i] != mx)
+        // {
+        //     smx = arr[i];
+        // }
     }
-    cout << mx << endl;
-    if (smx == INT_MIN)
-        cout << "No second largest exist";
-    else
+    // cout << mx << endl;
+    // if (smx == INT_MIN)
+    //     cout << "No second largest exist";
+    // else
         cout << smx << endl;
 
     return 0;

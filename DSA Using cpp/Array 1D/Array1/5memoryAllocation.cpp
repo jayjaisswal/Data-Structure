@@ -4,7 +4,7 @@ int main()
 {
     int arr[5];
     cout << &arr << endl;    // 0x61fefc
-    cout << arr << endl;    // 0x61fefc
+    cout << arr << endl;     // 0x61fefc
     cout << &arr[0] << endl; // 0x61fefc
     cout << &arr[1] << endl; // 0x61ff00
     cout << &arr[2] << endl; // 0x61ff04

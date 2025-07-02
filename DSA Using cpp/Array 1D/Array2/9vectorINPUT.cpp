@@ -15,7 +15,7 @@ int main()
 
     // if we do not have size given
 
-    vector<int> v; // we have size given
+    vector<int> v; // we haven't size given
     for (int i = 0; i < 5; i++)
     {
         int x;
