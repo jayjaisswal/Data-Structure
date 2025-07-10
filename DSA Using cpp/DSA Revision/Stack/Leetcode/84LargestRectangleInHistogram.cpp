@@ -1,7 +1,8 @@
 // class Solution {
 //     public:
 //         int largestRectangleArea(vector<int>& heights) {
-//             // next smaller index
+
+//             // next smaller index.....................................
 //             int n = heights.size();
 //             stack<int> sc;
 //             vector<int> arr(n);
@@ -21,7 +22,7 @@
 //                 sc.push(i);
 //             }
     
-//             // previous smaller element
+//             // previous smaller element..........................................
     
 //             stack<int> gt;
 //             // int brr[n];
@@ -37,6 +38,8 @@
     
 //                 gt.push(i);
 //             }
+
+//.......................................................................................
     
 //             int area = 0;
 //             for(int i = 0;i<n;i++){
