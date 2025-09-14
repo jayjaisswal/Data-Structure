@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paid Successfully</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 375px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .status-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .back-arrow {
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .header-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .header-action {
+            color: #00baf2;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        /* Main Card */
+        .payment-card {
+            background-color: white;
+            margin: 20px 16px;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .amount-section {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        
+        .amount-label {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .amount-display {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .amount {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .success-check {
+            width: 28px;
+            height: 28px;
+            background-color: #00c851;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .amount-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .category-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .category-badge {
+            background-color: #e8f5e8;
+            color: #666;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .category-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .edit-btn {
+            color: #00baf2;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .split-payment-btn {
+            border: 2px solid #00baf2;
+            background-color: white;
+            color: #00baf2;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+        
+        /* Recipient Section */
+        .recipient-section {
+            margin-bottom: 24px;
+        }
+        
+        .section-label {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .recipient-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .recipient-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #87ceeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .upi-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .upi-text {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .paytm-logo {
+            height: 16px;
+            font-weight: 600;
+            color: #00baf2;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .action-btn {
+            flex: 1;
+            border: 2px solid #00baf2;
+            background-color: white;
+            color: #00baf2;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        /* Sender Section */
+        .sender-section {
+            margin-bottom: 24px;
+        }
+        
+        .sender-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .sender-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .sender-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #d8b3ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .bank-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .bank-text {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .bank-icon {
+            width: 16px;
+            height: 16px;
+            background-color: #1f4e79;
+            border-radius: 2px;
+        }
+        
+        .payment-time {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .transaction-ref {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .ref-text {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .copy-btn {
+            color: #00baf2;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .payment-details {
+            color: #00baf2;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Location Card */
+        .location-card {
+            background-color: white;
+            margin: 0 16px 20px 16px;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .location-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .location-icon {
+            width: 24px;
+            height: 24px;
+            color: #666;
+        }
+        
+        .location-text {
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .arrow-right {
+            color: #ccc;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 16px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .upi-logo {
+            height: 20px;
+            margin: 0 4px;
+        }
+        
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            height: 50px;
+        }
+        
+        .nav-item {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-triangle {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid #666;
+            transform: rotate(-90deg);
+        }
+        
+        .nav-circle {
+            width: 16px;
+            height: 16px;
+            background-color: #666;
+            border-radius: 50%;
+        }
+        
+        .nav-square {
+            width: 14px;
+            height: 14px;
+            background-color: #666;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span>03:45</span>
+                <span style="font-weight: 300;">Z</span>
+                <span style="font-size: 10px; color: #666;">0 KB/s</span>
+            </div>
+            <div class="status-right">
+                <span>⏰</span>
+                <span style="font-size: 10px;">VoLTE</span>
+                <span>📶</span>
+                <span>4G+</span>
+                <span>🔋51%</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <span class="back-arrow">←</span>
+                <span class="header-title">Paid Successfully</span>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="header-action">Share</a>
+                <a href="#" class="header-action">Help</a>
+            </div>
+        </div>
+
+        <!-- Main Payment Card -->
+        <div class="payment-card">
+            <!-- Amount Section -->
+            <div class="amount-section">
+                <div class="amount-label">Amount</div>
+                <div class="amount-display">
+                    <span class="amount">₹1000</span>
+                    <div class="success-check">✓</div>
+                </div>
+                <div class="amount-text">One Thousand Only</div>
+                
+                <div class="category-section">
+                    <div class="category-badge">
+                        <span>🛒</span>
+                        <span>Transfer</span>
+                    </div>
+                    <a href="#" class="edit-btn">Edit</a>
+                </div>
+                
+                <button class="split-payment-btn">Split this Payment</button>
+            </div>
+
+            <!-- Recipient Section -->
+            <div class="recipient-section">
+                <div class="section-label">To</div>
+                <div class="recipient-info">
+                    <div class="recipient-name">Abdul Tarique</div>
+                    <div class="avatar">🥛</div>
+                </div>
+                <div class="upi-info">
+                    <span class="upi-text">UPI ID: paytm.8840402168 on</span>
+                    <span class="paytm-logo">paytm</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn">Pay Again</button>
+                    <button class="action-btn">View History</button>
+                </div>
+            </div>
+
+            <!-- Sender Section -->
+            <div class="sender-section">
+                <div class="section-label">From</div>
+                <div class="sender-info">
+                    <div class="sender-name">Jay Kumar</div>
+                    <div class="sender-avatar">JK</div>
+                </div>
+                <div class="bank-info">
+                    <span class="upi-text">UPI ID: 6299739584@ptaxis</span>
+                </div>
+                <div class="bank-info">
+                    <span class="bank-text">Bank Of India - 1969</span>
+                    <div class="bank-icon"></div>
+                </div>
+                
+                <div class="payment-time">Paid at 03:45 PM, 14 Sep 2025</div>
+                <div class="transaction-ref">
+                    <span class="ref-text">UPI Ref No: 525642775408</span>
+                    <a href="#" class="copy-btn">Copy</a>
+                </div>
+                
+                <div class="payment-details">
+                    <span>Payment Details</span>
+                    <span>⌄</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="location-card">
+            <div class="location-info">
+                <div class="location-icon">📍</div>
+                <span class="location-text">View Payment Location</span>
+            </div>
+            <span class="arrow-right">›</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                Powered by <strong>UPI</strong> | 🏛️ <strong>AXIS BANK</strong>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-item">
+                <div class="nav-triangle"></div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-circle"></div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-square"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
